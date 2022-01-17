@@ -12,8 +12,6 @@ services:
       - nesjs-network
     depends_on:
       - mongodb
-    environment:
-      WAIT_HOSTS: mongodb:27017
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -21,20 +19,14 @@ services:
   mongodb:
     image: mongo:latest
     container_name: mongodb
-    environment:
-      - MONGO_INITDB_ROOT_HOST='localhost'
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=123456
-      - MONGO_INITDB_DATABASE=parkingLot
-      - MONGO_INITDB_USERNAME=moo
-      - MONGO_INITDB_PASSWORD=111111
     volumes:
-      - ./db:/data/db
+      - ./database:/data/db
     ports:
       - 27017:27017
     networks:
       - nesjs-network
     restart: always
+
 networks:
   nesjs-network:
     driver: bridge
