@@ -61,7 +61,11 @@ Api to create parking lot
 - Data params
   Required:
   `size_name=[string] size=[number] amount=[number] IsEmpty=[boolean] zone=[string]`
+<<<<<<< HEAD
   -Examples
+=======
+  - Examples
+>>>>>>> 8b5e9d3c3370614cea7136d58691fffbcf561390
   `{"size_name": "large", "size": 3, "amount": 8, "IsEmpty": true, "zone": "C"}`
 
 - Success Response
